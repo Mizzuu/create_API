@@ -4,7 +4,7 @@ const {
     getLocations,
     getLocation,
     postLocation,
-} = require("../controllers/locationController.js");
+} = require("../controllers/locationControllers.js");
 
 router.get("/", getLocations);
 router.get("/:id", getLocation);
