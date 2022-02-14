@@ -9,11 +9,11 @@ const {
     postVillain,
 } = require("../controllers/characterControllers.js");
 
-router.get("/heroes", getHeroes);
-router.get("/heroes/:id", getHero);
-router.post("/heroes", postHero);
-router.get("/villains", getVillains);
-router.get("/villains/:id", getVillain);
-router.post("/villains", postVillain);
+router.get("/", getHeroes);
+router.get("/:id", getHero);
+router.post("/", postHero);
+router.get("/", getVillains);
+router.get("/:id", getVillain);
+router.post("/", postVillain);
 
 module.exports = router;
