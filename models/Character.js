@@ -17,14 +17,15 @@ function stringToArray(powerString) {
 }
 
 CharacterSchema.virtual("description").get(function () {
-    return `${this.name} is a ${this.type} whose special power are ${this.powers}`;
+    if (this.type == "hero") {
+        return `${this.name} is a noble ${this.type} whose special power are ${this.powers}`;
+    } else {
+        return `${this.name} is a nefarious ${this.type} whose special power are ${this.powers}`;
+    }
 });
-// .set(function (v) {
-//     this.set({ name, type, powers });
-// });
 
 CharacterSchema.statics.findByType = function (type) {
-    return this.find({ type: "villain" });
+    return this.find({ type: type });
 };
 
 const Character = mongoose.model("Character", CharacterSchema);

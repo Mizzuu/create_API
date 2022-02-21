@@ -1,19 +1,13 @@
 const router = require("express").Router({ mergeParams: true });
 
 const {
-    getHeroes,
-    getHero,
-    postHero,
-    getVillains,
-    getVillain,
-    postVillain,
+    getCharacters,
+    getCharacter,
+    postCharacter,
 } = require("../controllers/characterControllers.js");
 
-router.get("/", getHeroes);
-router.get("/:id", getHero);
-router.post("/", postHero);
-router.get("/", getVillains);
-router.get("/:id", getVillain);
-router.post("/", postVillain);
+router.get("/", getCharacters);
+router.get("/:id", getCharacter);
+router.post("/", postCharacter);
 
 module.exports = router;
